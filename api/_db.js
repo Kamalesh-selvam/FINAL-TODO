@@ -31,7 +31,4 @@ async function connect() {
       return cached.conn;
     });
   }
-  return cached.promise;
-}
-
 module.exports = { connect };

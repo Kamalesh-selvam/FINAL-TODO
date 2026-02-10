@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
-  "outputDirectory": "build",
+  "buildCommand": "cd frontend && npm run build",
+  "outputDirectory": "frontend/build",
   "routes": [
-    { "src": "/api/(.*)", "dest": "/api/$1" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    { "src": "/api/auth/register", "dest": "/api/auth/register.js" },
+    { "src": "/api/auth/login", "dest": "/api/auth/login.js" },
+    { "src": "/api/todos", "dest": "/api/todos/index.js" },
+    { "src": "/api/todos/([^/]+)", "dest": "/api/todos/[id].js?id=$1" },
+    { "src": "/(.*)", "dest": "/frontend/build/index.html" }
   ]
 }
